@@ -1,11 +1,11 @@
-from langchain.agents import create_agent
+from langgraph.prebuilt import create_react_agent
 from big_ai.model.factory import chat_model
 from big_ai.agent.tools.middleware import monitor_tool,log_before_model,report_prompt_switch
 from big_ai.common.prompt_loader import load_report_prompts,load_system_prompts
 from big_ai.agent.tools.agent_tools import (rag_summarize,get_warther,get_user_location,get_user_id,get_current_month,generate_exernal_data,fetch_external_data)
 class ReactAgent:
     def __init__(self):
-        self.agent = create_agent(
+        self.agent = create_react_agent(
             model=chat_model,
             tools=[rag_summarize,get_warther,get_user_location,get_user_id,get_current_month,generate_exernal_data,fetch_external_data],
             middleware=[monitor_tool,log_before_model,report_prompt_switch],
