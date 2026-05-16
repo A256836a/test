@@ -1,0 +1,55 @@
+2026-05-15 11:39:53,103 - agent - INFO - logger_handler.py:56 - 信息日志
+2026-05-15 11:39:53,103 - agent - ERROR - logger_handler.py:57 - 错误日志
+2026-05-15 11:39:53,104 - agent - WARNING - logger_handler.py:58 - 警告日志
+2026-05-15 11:39:53,104 - agent - DEBUG - logger_handler.py:59 - 调试日志
+2026-05-15 11:40:37,694 - agent - INFO - logger_handler.py:56 - 信息日志
+2026-05-15 11:40:37,694 - agent - ERROR - logger_handler.py:57 - 错误日志
+2026-05-15 11:40:37,695 - agent - WARNING - logger_handler.py:58 - 警告日志
+2026-05-15 11:40:37,695 - agent - DEBUG - logger_handler.py:59 - 调试日志
+2026-05-15 12:05:04,933 - agent - ERROR - prompt_loader.py:38 - [load_report_prompts]在yaml配置项中没有report_prompt_path配置项
+2026-05-15 12:05:36,122 - agent - ERROR - prompt_loader.py:44 - [load_report_prompts]解析报告生成提示词出错，[Errno 2] No such file or directory: 'E:\\文件\\AI\\Ai agent\\AI大模型\\05AI大模型RAG与智能体开发\\prompts/main_prompt'
+2026-05-15 15:22:15,189 - agent - INFO - logger_handler.py:60 - 信息日志
+2026-05-15 15:22:15,190 - agent - ERROR - logger_handler.py:61 - 错误日志
+2026-05-15 15:22:15,190 - agent - WARNING - logger_handler.py:62 - 警告日志
+2026-05-15 15:22:15,190 - agent - DEBUG - logger_handler.py:63 - 调试日志
+2026-05-15 17:55:26,433 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-15 18:21:58,406 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-15 18:21:58,407 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-15 18:21:58,407 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-15 18:21:58,410 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-15 18:21:58,410 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url

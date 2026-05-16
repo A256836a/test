@@ -1,0 +1,498 @@
+2026-05-16 09:20:45,165 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-16 09:20:45,165 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-16 09:20:45,166 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-16 09:20:45,168 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-16 09:20:45,169 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-05-16 09:34:06,166 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-16 09:34:06,166 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-16 09:34:06,167 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-16 09:34:06,169 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-16 09:34:06,169 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-05-16 09:35:06,906 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-16 09:35:06,906 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-16 09:35:06,906 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-16 09:35:06,909 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-16 09:35:06,909 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-05-16 09:41:20,662 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]data不是文件夹
+2026-05-16 09:41:20,662 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-16 09:41:20,662 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-16 09:41:20,665 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-16 09:41:20,665 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-05-16 09:41:34,016 - agent - ERROR - file_handler.py:47 - [listdir_with_allowed_type]E:\文件\AI\Ai agent\AI大模型\big_ai\data不是文件夹
+2026-05-16 09:41:34,016 - agent - ERROR - file_handler.py:14 - [md5计算]文件txt不存在
+2026-05-16 09:41:34,016 - agent - ERROR - vector_store.py:86 - 加载知识库txt加载失败：Error loading txt
+Traceback (most recent call last):
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 42, in lazy_load
+    with open(self.file_path, encoding=self.encoding) as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'txt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 52, in get_file_document
+    return txt_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 62, in txt_loader
+    return TextLoader(filepath, encoding="utf-8").load()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\text.py", line 58, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading txt
+2026-05-16 09:41:34,019 - agent - ERROR - file_handler.py:14 - [md5计算]文件pdf不存在
+2026-05-16 09:41:34,019 - agent - ERROR - vector_store.py:86 - 加载知识库pdf加载失败：File path pdf is not a valid file or url
+Traceback (most recent call last):
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 68, in load_document
+    document=get_file_document(path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\rag\vector_store.py", line 50, in get_file_document
+    return pdf_loader(read_path)
+  File "E:\文件\AI\Ai agent\AI大模型\big_ai\common\file_handler.py", line 58, in pdf_loader
+    return PyPDFLoader(filepath, passwd).load()
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 281, in __init__
+    super().__init__(file_path, headers=headers)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\11172778\AppData\Local\Programs\Python\Python313\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 140, in __init__
+    raise ValueError("File path %s is not a valid file or url" % self.file_path)
+ValueError: File path pdf is not a valid file or url
+2026-05-16 09:42:40,517 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf成功
+2026-05-16 09:42:44,945 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt成功
+2026-05-16 09:42:50,344 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt成功
+2026-05-16 09:42:59,911 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt成功
+2026-05-16 09:43:05,467 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt成功
+2026-05-16 09:43:10,225 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt成功
+2026-05-16 09:44:04,458 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf成功
+2026-05-16 09:44:08,867 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt成功
+2026-05-16 09:44:14,282 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt成功
+2026-05-16 09:44:23,875 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt成功
+2026-05-16 09:44:29,505 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt成功
+2026-05-16 09:44:34,319 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt成功
+2026-05-16 09:44:40,008 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf已经存在，跳过
+2026-05-16 09:44:44,660 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt成功
+2026-05-16 09:44:50,268 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt成功
+2026-05-16 09:44:59,907 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt成功
+2026-05-16 09:45:06,050 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt成功
+2026-05-16 09:45:13,795 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt成功
+2026-05-16 09:46:48,184 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf已经存在，跳过
+2026-05-16 09:46:52,862 - agent - INFO - vector_store.py:84 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt成功
+2026-05-16 09:46:58,366 - agent - INFO - vector_store.py:84 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt成功
+2026-05-16 09:47:07,954 - agent - INFO - vector_store.py:84 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt成功
+2026-05-16 09:47:13,980 - agent - INFO - vector_store.py:84 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt成功
+2026-05-16 09:47:20,475 - agent - INFO - vector_store.py:84 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt成功
+2026-05-16 09:49:34,149 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf已经存在，跳过
+2026-05-16 09:49:34,150 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt已经存在，跳过
+2026-05-16 09:49:34,151 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt已经存在，跳过
+2026-05-16 09:49:34,152 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt已经存在，跳过
+2026-05-16 09:49:34,152 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt已经存在，跳过
+2026-05-16 09:49:34,153 - agent - DEBUG - vector_store.py:66 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt已经存在，跳过
+2026-05-16 09:51:43,542 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf已经存在，跳过
+2026-05-16 09:51:43,542 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt已经存在，跳过
+2026-05-16 09:51:43,543 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt已经存在，跳过
+2026-05-16 09:51:43,544 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt已经存在，跳过
+2026-05-16 09:51:43,544 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt已经存在，跳过
+2026-05-16 09:51:43,545 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt已经存在，跳过
+2026-05-16 09:52:09,638 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf已经存在，跳过
+2026-05-16 09:52:09,639 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt已经存在，跳过
+2026-05-16 09:52:09,639 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt已经存在，跳过
+2026-05-16 09:52:09,640 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt已经存在，跳过
+2026-05-16 09:52:09,640 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt已经存在，跳过
+2026-05-16 09:52:09,641 - agent - DEBUG - vector_store.py:65 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt已经存在，跳过
+2026-05-16 09:52:58,340 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问.pdf成功
+2026-05-16 09:53:02,950 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫地机器人100问2.txt成功
+2026-05-16 09:53:08,837 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\扫拖一体机器人100问.txt成功
+2026-05-16 09:53:18,375 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\故障排除.txt成功
+2026-05-16 09:53:23,883 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\维护保养.txt成功
+2026-05-16 09:53:28,887 - agent - INFO - vector_store.py:83 - 加载知识库E:\文件\AI\Ai agent\AI大模型\big_ai\data\选购指南.txt成功
+2026-05-16 16:18:25,076 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:18:25,076 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，机器人是什么？。
+2026-05-16 16:22:49,409 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:22:49,409 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，机器人是什么？。
+2026-05-16 16:25:06,573 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:25:06,573 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，机器人是什么？。
+2026-05-16 16:26:22,258 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:26:22,258 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，机器人是什么？。
+2026-05-16 16:28:20,045 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:28:20,045 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，扫地机器人在我所在地区的气温下如何保养？。
+2026-05-16 16:28:23,106 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 16:28:23,106 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 16:28:23,108 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 16:28:23,110 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 16:28:23,110 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，北京。
+2026-05-16 16:28:25,826 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 16:28:25,826 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '北京'}
+2026-05-16 16:28:25,827 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 16:28:25,828 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 16:28:25,829 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市北京是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 16:28:29,451 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:28:29,452 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人在25-30摄氏度、中等湿度环境下的保养方法'}
+2026-05-16 16:28:31,770 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:28:31,771 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 16:28:31,771 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，参考资料中未提及扫地机器人在25-30摄氏度、中等湿度环境下的具体保养方法。。
+2026-05-16 16:28:34,530 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:28:34,530 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人日常保养和维护方法'}
+2026-05-16 16:28:37,738 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:28:37,739 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有9条消息。
+2026-05-16 16:28:37,740 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，定期清理滚刷和边刷上的缠绕物，清空尘盒并清洗滤网（部分型号支持水洗），检查并清理传感器和充电触点，避免在潮湿或有大量液体的地面上使用，长时间不使用时应断电存放。。
+2026-05-16 16:28:46,006 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:28:46,006 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，扫地机器人如何保养？。
+2026-05-16 16:28:47,782 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:28:47,782 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人保养方法'}
+2026-05-16 16:28:51,045 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:28:51,047 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 16:28:51,047 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，定期清理滚刷和边刷上的缠绕物，清空尘盒并清洗滤网（部分型号支持水洗），检查并清理传感器和充电触点，避免在潮湿或有大量液体的地面上使用，长时间不用时应取出电池并存放于干燥处。。
+2026-05-16 16:31:49,928 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 16:31:49,928 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，生成我的使用报告。
+2026-05-16 16:31:52,483 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fill_context_for_report
+2026-05-16 16:31:52,483 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{}
+2026-05-16 16:31:52,483 - agent - INFO - middleware.py:20 - [tool monitor] 工具fill_context_for_report调用成功
+2026-05-16 16:31:52,484 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 16:31:52,484 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，Error: fill_context_for_report is not a valid tool, try one of [rag_summarize, get_warther, get_user_location, get_user_id, get_current_month, generate_exernal_data, fetch_external_data].。
+2026-05-16 16:31:56,208 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_id
+2026-05-16 16:31:56,209 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': 'get user id'}
+2026-05-16 16:31:56,209 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_id调用成功
+2026-05-16 16:31:56,210 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 16:31:56,210 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，1006。
+2026-05-16 16:31:58,122 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 16:31:58,122 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': 'get current month'}
+2026-05-16 16:31:58,124 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 16:31:58,126 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 16:31:58,126 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，7。
+2026-05-16 16:32:00,492 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 16:32:00,493 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': 'get current month in YYYY-MM format'}
+2026-05-16 16:32:00,493 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 16:32:00,495 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有9条消息。
+2026-05-16 16:32:00,495 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，4。
+2026-05-16 16:32:04,570 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fetch_external_data
+2026-05-16 16:32:04,570 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'user_id': '1006', 'month': '2025-04'}
+2026-05-16 16:32:04,572 - agent - INFO - middleware.py:20 - [tool monitor] 工具fetch_external_data调用成功
+2026-05-16 16:32:04,573 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有11条消息。
+2026-05-16 16:32:04,573 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，{"特征": "150㎡别墅 | 儿童 | 多层", "效率": "跨楼层失败:1次/周\\n玩具避障率:85%", "耗材": "边刷寿命:剩余60天\\n集尘袋消耗:0.8个/月", "对比": "清洁效率优于80%大户型多层用户"}。
+2026-05-16 16:32:06,627 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:32:06,627 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '多层别墅扫地机器人使用建议 跨楼层导航'}
+2026-05-16 16:32:10,450 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:32:10,452 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有13条消息。
+2026-05-16 16:32:10,452 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，多层别墅使用扫地机器人时，需选择支持多楼层地图记忆和跨楼层导航功能的型号；部分高端机型可通过激光或视觉识别自动识别所在楼层并加载对应地图；若机器人不支持自动跨楼层识别，需手动在不同楼层放置充电座并分别建图；建议确保各楼层Wi-Fi信号覆盖良好以保障远程控制与地图同步。。
+2026-05-16 16:32:12,298 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:32:12,298 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '有儿童家庭扫地机器人避障建议 玩具清理'}
+2026-05-16 16:32:15,525 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:32:15,526 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有15条消息。
+2026-05-16 16:32:15,526 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，有儿童的家庭在使用扫地机器人时，应选择具备强避障能力的机型，以避免碰撞散落在地面的玩具；同时建议在清扫前手动清理较大或易缠绕的玩具，确保机器人安全高效运行。。
+2026-05-16 16:32:17,586 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 16:32:17,586 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人边刷和集尘袋保养更换周期'}
+2026-05-16 16:32:20,043 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 16:32:20,044 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有17条消息。
+2026-05-16 16:32:20,044 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，边刷建议每3-6个月更换一次，集尘袋根据使用频率一般每1-3个月更换一次。。
+2026-05-16 17:21:03,283 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:21:03,284 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，生成我的使用报告。
+2026-05-16 17:21:05,549 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_id
+2026-05-16 17:21:05,551 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:21:05,553 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_id调用成功
+2026-05-16 17:21:05,556 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:21:05,557 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，1007。
+2026-05-16 17:21:08,154 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 17:21:08,155 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:21:08,157 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 17:21:08,162 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:21:08,163 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，2。
+2026-05-16 17:21:11,514 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fill_context_for_report
+2026-05-16 17:21:11,516 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:21:11,516 - agent - INFO - middleware.py:20 - [tool monitor] 工具fill_context_for_report调用成功
+2026-05-16 17:21:11,520 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:21:11,521 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，Error: fill_context_for_report is not a valid tool, try one of [rag_summarize, get_warther, get_user_location, get_user_id, get_current_month, generate_exernal_data, fetch_external_data].。
+2026-05-16 17:21:14,031 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 17:21:14,032 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{}
+2026-05-16 17:21:14,033 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 17:21:14,034 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有9条消息。
+2026-05-16 17:21:14,034 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，Error invoking tool 'get_current_month' with kwargs {} with error:
+ query: Field required
+ Please fix the error and try again.。
+2026-05-16 17:21:15,911 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 17:21:15,912 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': 'current'}
+2026-05-16 17:21:15,915 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 17:21:15,918 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有11条消息。
+2026-05-16 17:21:15,918 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，6。
+2026-05-16 17:21:19,451 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fetch_external_data
+2026-05-16 17:21:19,452 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'user_id': '1007', 'month': '2024-06'}
+2026-05-16 17:21:19,459 - agent - WARNING - agent_tools.py:74 - 【generate_exernal_data】未能检索到1007在2024-06的使用记录
+2026-05-16 17:21:19,460 - agent - INFO - middleware.py:20 - [tool monitor] 工具fetch_external_data调用成功
+2026-05-16 17:21:19,461 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有13条消息。
+2026-05-16 17:21:19,461 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，。
+2026-05-16 17:21:23,096 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fetch_external_data
+2026-05-16 17:21:23,096 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'user_id': '1007', 'month': '2025-06'}
+2026-05-16 17:21:23,097 - agent - ERROR - middleware.py:26 - 工具fetch_external_data调用失败，原因cannot access local variable 'external_data_path' where it is not associated with a value
+2026-05-16 17:28:44,125 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:28:44,126 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，如何保养扫地机器人。
+2026-05-16 17:28:45,913 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:28:45,913 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人保养维护方法'}
+2026-05-16 17:28:49,266 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:28:49,268 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:28:49,268 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，定期清理滚刷和边刷上的缠绕物，清空尘盒并清洗滤网（部分型号支持水洗），检查并清理传感器和充电触点，避免在潮湿或有大量液体的地面使用，长时间不用时应取出电池并存放于干燥处。。
+2026-05-16 17:29:07,904 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:29:07,904 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，还有吗。
+2026-05-16 17:29:23,867 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:29:23,867 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，询问扫地机器人的某个功能是否还有其他设置？。
+2026-05-16 17:31:33,055 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:31:33,056 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，在我城市的当前天气下，机器人如何保养。
+2026-05-16 17:31:36,808 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 17:31:36,809 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:31:36,812 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 17:31:36,816 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:31:36,816 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，深圳。
+2026-05-16 17:31:39,278 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 17:31:39,279 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '深圳'}
+2026-05-16 17:31:39,282 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 17:31:39,287 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:31:39,288 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市深圳是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 17:31:43,153 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:31:43,155 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人在温暖潮湿环境下的保养方法'}
+2026-05-16 17:31:46,816 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:31:46,822 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:31:46,823 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，在温暖潮湿环境下，应定期清理扫地机器人的尘盒、滤网和滚刷，保持机身干燥，避免电机和电路受潮；使用后及时充电并存放于通风处，防止霉菌滋生和零部件腐蚀。。
+2026-05-16 17:32:32,508 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:32:32,508 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，在我城市的当前天气下，机器人如何保养。
+2026-05-16 17:32:36,567 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 17:32:36,568 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:32:36,571 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 17:32:36,576 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:32:36,577 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，深圳。
+2026-05-16 17:32:40,298 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 17:32:40,299 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '深圳'}
+2026-05-16 17:32:40,300 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 17:32:40,301 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:32:40,301 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市深圳是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 17:32:46,051 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:32:46,051 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人在温和干燥环境下如何保养'}
+2026-05-16 17:32:48,920 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:32:48,927 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:32:48,928 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，在温和干燥环境下，扫地机器人应定期清理尘盒、滤网和滚刷，避免灰尘堆积；保持传感器清洁以确保正常导航；长时间不使用时应断电并存放于干燥处，防止电池老化。。
+2026-05-16 17:33:55,043 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:33:55,043 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，在我城市的当前天气下，机器人如何保养。
+2026-05-16 17:33:58,718 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 17:33:58,718 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:33:58,719 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 17:33:58,721 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:33:58,721 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，汕头。
+2026-05-16 17:34:02,972 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 17:34:02,972 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '汕头'}
+2026-05-16 17:34:02,973 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 17:34:02,986 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:34:02,986 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市汕头是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 17:34:29,259 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:34:29,259 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，在我城市的当前天气下，机器人如何保养。
+2026-05-16 17:34:34,538 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 17:34:34,538 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:34:34,542 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 17:34:34,579 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:34:34,579 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，深圳。
+2026-05-16 17:34:39,535 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 17:34:39,536 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '深圳'}
+2026-05-16 17:34:39,537 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 17:34:40,103 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:34:40,104 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市深圳是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 17:34:46,380 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:34:46,382 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '湿度50%环境下扫地扫拖机器人保养建议'}
+2026-05-16 17:34:50,805 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:34:52,084 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:34:52,084 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，在湿度50%的环境下，扫地扫拖机器人保养建议包括：定期清理尘盒、滤网和滚刷，避免潮湿环境中滋生细菌；使用后及时倒掉水箱中的剩余水，防止霉变；保持充电座干燥，避免受潮影响电路；建议每周检查边刷和传感器是否积灰或受潮，确保正常运行。。
+2026-05-16 17:36:46,503 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:36:46,503 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，在我城市的当前天气下，机器人如何保养。
+2026-05-16 17:36:49,631 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_location
+2026-05-16 17:36:49,632 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': 'user_location'}
+2026-05-16 17:36:49,635 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_location调用成功
+2026-05-16 17:36:49,671 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:36:49,672 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，北京。
+2026-05-16 17:36:52,659 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_warther
+2026-05-16 17:36:52,659 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '北京'}
+2026-05-16 17:36:52,660 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_warther调用成功
+2026-05-16 17:36:53,228 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:36:53,229 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，城市北京是一个好天气，气温为26摄氏度，空气湿度为50%，南风1级，AQI21，最近6小时降雨概率极低。
+2026-05-16 17:36:57,726 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:36:57,727 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人在26度温度50%湿度天气下的保养方法'}
+2026-05-16 17:37:00,551 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:37:00,950 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:37:00,951 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，参考资料中未提及扫地机器人在26度温度50%湿度天气下的具体保养方法。。
+2026-05-16 17:37:03,931 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:37:03,932 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '扫地机器人日常保养维护方法'}
+2026-05-16 17:37:07,880 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:37:08,879 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有9条消息。
+2026-05-16 17:37:08,879 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，定期清理滚刷和边刷上的缠绕物，清空尘盒并清洗滤网（部分型号支持水洗），检查并清洁传感器和充电触点，避免在潮湿或有大量液体的地面上使用，长时间不用时应取出电池并存放于干燥处。。
+2026-05-16 17:37:38,415 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-16 17:37:38,415 - agent - DEBUG - middleware.py:38 - [log_before_model]HumanMessage，帮我生成使用报告。
+2026-05-16 17:37:41,752 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_user_id
+2026-05-16 17:37:41,753 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:37:41,755 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_user_id调用成功
+2026-05-16 17:37:41,811 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-16 17:37:41,812 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，1007。
+2026-05-16 17:37:43,754 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 17:37:43,754 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:37:43,755 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 17:37:43,777 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-16 17:37:43,777 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，3。
+2026-05-16 17:37:46,697 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：get_current_month
+2026-05-16 17:37:46,698 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:37:46,700 - agent - INFO - middleware.py:20 - [tool monitor] 工具get_current_month调用成功
+2026-05-16 17:37:46,724 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有7条消息。
+2026-05-16 17:37:46,724 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，6。
+2026-05-16 17:37:51,876 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fill_context_for_report
+2026-05-16 17:37:51,876 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': ''}
+2026-05-16 17:37:51,877 - agent - INFO - middleware.py:20 - [tool monitor] 工具fill_context_for_report调用成功
+2026-05-16 17:37:53,903 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有9条消息。
+2026-05-16 17:37:53,903 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，Error: fill_context_for_report is not a valid tool, try one of [rag_summarize, get_warther, get_user_location, get_user_id, get_current_month, generate_exernal_data, fetch_external_data].。
+2026-05-16 17:37:57,147 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：fetch_external_data
+2026-05-16 17:37:57,147 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'user_id': '1007', 'month': '2025-06'}
+2026-05-16 17:37:57,149 - agent - INFO - middleware.py:20 - [tool monitor] 工具fetch_external_data调用成功
+2026-05-16 17:37:58,464 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有11条消息。
+2026-05-16 17:37:58,464 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，{"特征": "55㎡一居 | 独居 | 复合地板", "效率": "覆盖率:90%\\n日均清扫:35㎡\\n沿边清扫无死角", "耗材": "滤网寿命:剩余80天\\n尘盒清理:每5天", "对比": "清洁效率优于70%小户型用户"}。
+2026-05-16 17:38:01,515 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:38:01,516 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '复合地板扫地机器人保养建议'}
+2026-05-16 17:38:05,736 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:38:07,023 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有13条消息。
+2026-05-16 17:38:07,023 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，使用扫地机器人清洁复合地板时，应定期清理机器人的滚刷和边刷，避免毛发缠绕影响清洁效果；及时清空尘盒，防止灰尘堆积；检查并清洁传感器，确保导航精准；避免在潮湿地面运行，以防地板受潮变形；建议每周至少运行一次，保持地板清洁并延长地板使用寿命。。
+2026-05-16 17:38:08,788 - agent - INFO - middleware.py:14 - [tool monitor]执行工具：rag_summarize
+2026-05-16 17:38:08,789 - agent - INFO - middleware.py:15 - [tool monitor]传入参数：{'query': '滤网更换周期和尘盒清理频率'}
+2026-05-16 17:38:10,864 - agent - INFO - middleware.py:20 - [tool monitor] 工具rag_summarize调用成功
+2026-05-16 17:38:11,122 - agent - INFO - middleware.py:36 - [log_before_model]即将调用模型，带有15条消息。
+2026-05-16 17:38:11,122 - agent - DEBUG - middleware.py:38 - [log_before_model]ToolMessage，滤网建议每3个月更换一次，尘盒需每周清理一次。。
