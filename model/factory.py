@@ -47,7 +47,10 @@ def get_embed_model() -> Optional[Embeddings]:
         return _EMBED_MODEL
 
     try:
-        _EMBED_MODEL = DashScopeEmbeddings(model=rag_conf.get("embedding_model_name"))
+        _EMBED_MODEL = DashScopeEmbeddings(
+            model=rag_conf.get("embedding_model_name"),
+            dashscope_api_key=os.getenv("DASHSCOPE_API_KEY"),
+        )
         return _EMBED_MODEL
     except Exception as e:
         import logging

@@ -8,6 +8,7 @@ from rag.vector_store import VectorStoreService
 from common.prompt_loader import load_rag_prompts
 from langchain_core.prompts import PromptTemplate
 from model.factory import get_chat_model
+from common.logger_handler import logger
 
 
 def print_prompt(prompt):
@@ -19,8 +20,18 @@ def print_prompt(prompt):
 
 class RagSummarizeService(object):
     def __init__(self):
-        self.vector_store = VectorStoreService()
-        self.retriever = self.vector_store.get_retriever()
+        self.vector_store = None
+        self.retriever = None
+        self._rag_available = False
+        try:
+            self.vector_store = VectorStoreService()
+            self.retriever = self.vector_store.get_retriever()
+            self._rag_available = True
+        except Exception as e:
+            logger.warning(
+                "[RagSummarizeService] vector store unavailable (e.g. missing DASHSCOPE_API_KEY): %s",
+                e,
+            )
         self.prompt_text = load_rag_prompts()
         self.prompt_template = PromptTemplate.from_template(self.prompt_text)
         self.model = get_chat_model()
@@ -39,6 +50,8 @@ class RagSummarizeService(object):
         return chain
 
     def retriever_docs(self, query: str) -> list[Document]:
+        if not self._rag_available or self.retriever is None:
+            return []
         return self.retriever.invoke(query)
 
     def rag_summarize(self, query: str) -> str:
