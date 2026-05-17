@@ -42,3 +42,10 @@
 2026-05-17 10:15:46,757 - agent - DEBUG - middleware.py:42 - [log_before_model]HumanMessage | 扫地机器人怎么保养
 2026-05-17 12:06:42,179 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有1条消息。
 2026-05-17 12:06:42,179 - agent - DEBUG - middleware.py:42 - [log_before_model]HumanMessage | 智扫通机器人
+2026-05-17 14:39:39,040 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-17 14:39:39,041 - agent - DEBUG - middleware.py:42 - [log_before_model]HumanMessage | 扫地机器人需要怎么保养
+2026-05-17 14:39:40,342 - agent - INFO - middleware.py:19 - [tool monitor]执行工具：rag_summarize
+2026-05-17 14:39:40,342 - agent - INFO - middleware.py:20 - [tool monitor]传入参数：{'query': '扫地机器人保养维护指南'}
+2026-05-17 14:39:44,243 - agent - INFO - middleware.py:24 - [tool monitor]工具rag_summarize调用成功
+2026-05-17 14:39:45,323 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-17 14:39:45,323 - agent - DEBUG - middleware.py:42 - [log_before_model]ToolMessage | 定期清理滚刷和边刷，避免毛发缠绕；清空集尘盒并清洗滤网，确保吸力正常；检查传感器是否被灰尘覆盖，保持清洁以维持导航精度；定期查看轮子是否卡住或磨损；长时间不使用时，应取出电池并存放于干燥处。

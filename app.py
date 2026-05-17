@@ -1,5 +1,9 @@
 # import sys
+# 解决线上 chromadb / protobuf 错误
 import os
+os.environ["CHROMA_TELEMETRY"] = "0"
+os.environ["OTEL_SDK_DISABLED"] = "1"
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import time
 
 # # 关键：添加项目根目录（AI大模型）到Python路径

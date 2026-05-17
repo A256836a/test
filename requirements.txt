@@ -1,13 +1,22 @@
-streamlit>=1.32.0
-langchain==0.1.22
-langchain-community==0.0.38
-langchain-core==0.1.52
-langgraph==0.0.49
-langchain-chroma==0.1.0
-chromadb==0.4.0
+# 核心框架
+streamlit>=1.38.0
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-core==0.2.38
+langgraph==0.2.19
+
+# 向量数据库
+langchain-chroma==0.1.4
+chromadb==0.5.3
+
+# 通义千问
 dashscope==1.20.1
-pydantic==2.6.1
-pydantic-settings==2.2.1
+
+# 工具库
+pydantic>=2.11.0
+pydantic-settings>=2.6.1
 python-dotenv==1.0.1
 PyYAML==6.0.1
-protobuf==3.20.3
+
+# 解决protobuf冲突
+protobuf==4.25.3
