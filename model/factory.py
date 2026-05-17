@@ -1,14 +1,10 @@
-
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from abc import ABC, abstractmethod
 from typing import Optional
 from langchain_core.embeddings import Embeddings
 from langchain_community.chat_models.tongyi import BaseChatModel
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.chat_models.tongyi import ChatTongyi
-from big_ai.common.config_handler import rag_conf
+from common.config_handler import rag_conf
 
 
 class BaseModelFactory(ABC):

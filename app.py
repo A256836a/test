@@ -1,43 +1,48 @@
-# ========== 必须放在文件第一行 ==========
 import sys
 import os
 import time
 
-# 关键：添加项目根目录（AI大模型）到Python路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# ======================================
+# Ensure the app directory is on sys.path so sibling packages (agent, model, utils) import correctly
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# 然后用相对导入
-from agent.react_agent import ReactAgent
 import streamlit as st
+from agent.react_agent import ReactAgent
 
-st.title('智扫通机器人')
+# 标题
+st.title("智扫通机器人智能客服")
 st.divider()
-prompt=st.chat_input()
-if 'agent' not in st.session_state:
-    st.session_state['agent']=ReactAgent()
 
-if 'message' not in st.session_state:
-    st.session_state['message']=[{'role':'assistant','content':'请输入内容'}]
-for msg in st.session_state['message']:
-    st.chat_message(msg['role']).write(msg['content'])
+if "agent" not in st.session_state:
+    st.session_state["agent"] = ReactAgent()
+
+if "message" not in st.session_state:
+    st.session_state["message"] = []
+
+for message in st.session_state["message"]:
+    st.chat_message(message["role"]).write(message["content"])
+
+# 用户输入提示词
+prompt = st.chat_input()
 
 if prompt:
-    st.session_state['message'].append({'role':'user','content':prompt})
-    st.chat_message('user').write(prompt)
-    app_list=[]
-    with st.spinner('数据正在加载中。。。'):
-       res= st.session_state['agent'].execute_stream(prompt)
-       def captrue(data,list):
-           for chunk in data:
-               list.append(chunk)
-               for char in chunk:
+    st.chat_message("user").write(prompt)
+    st.session_state["message"].append({"role": "user", "content": prompt})
+
+    response_messages = []
+    with st.spinner("智能客服思考中..."):
+        res_stream = st.session_state["agent"].execute_stream(prompt)
+
+        def capture(generator, cache_list):
+
+            for chunk in generator:
+                cache_list.append(chunk)
+
+                for char in chunk:
                     time.sleep(0.01)
                     yield char
 
-       st.chat_message('assistant').write(captrue(res,app_list))
-       st.session_state['message'].append({'role':'assistant','content':app_list[-1]})
-       st.rerun()
-
+        st.chat_message("assistant").write_stream(capture(res_stream, response_messages))
+        st.session_state["message"].append({"role": "assistant", "content": response_messages[-1]})
+        st.rerun()
 
 

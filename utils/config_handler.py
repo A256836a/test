@@ -2,12 +2,8 @@
 yaml
 k: v
 """
-# import sys
-import os
-# sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 import yaml
-from .path_tool import get_abs_path
+from common.path_tool import get_abs_path
 
 
 def load_rag_config(config_path: str=get_abs_path("config/rag.yml"), encoding: str="utf-8"):

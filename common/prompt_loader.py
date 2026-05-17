@@ -1,10 +1,6 @@
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from big_ai.common.config_handler import prompts_conf
-from big_ai.common.path_tool import get_abs_path
-from big_ai.common.logger_handler import logger
+from .config_handler import prompts_conf
+from .path_tool import get_abs_path
+from .logger_handler import logger
 
 
 def load_system_prompts():
