@@ -6,13 +6,13 @@ os.environ["OTEL_SDK_DISABLED"] = "1"
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import time
 
-# # 关键：添加项目根目录（AI大模型）到Python路径
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# # ======================================
+import streamlit as st
+from common.env_bootstrap import ensure_dashscope_api_key_in_env
+
+ensure_dashscope_api_key_in_env()
 
 # 然后用相对导入
 from agent.react_agent import ReactAgent
-import streamlit as st
 from model.factory import get_chat_model
 # 标题
 st.title("智扫通机器人智能客服")
@@ -22,10 +22,15 @@ st.divider()
 _chat_available = get_chat_model() is not None
 if not _chat_available:
     st.warning(
-        "当前处于降级模式：未检测到 dashscope 包或环境变量 DASHSCOPE_API_KEY 未设置。\n"
-        "若要启用真实模型响应，请在部署环境（例如 Streamlit Cloud 的 Settings -> Advanced -> Environment variables）中添加 `DASHSCOPE_API_KEY`，"
-        "并确保 `requirements.txt` 中包含 `dashscope`。\n"
-        "当前将使用本地降级/模拟响应以保持应用可用。"
+        "当前处于降级模式：未检测到可用的 DashScope API Key。\n\n"
+        "请在以下任一位置配置密钥后重新部署：\n"
+        "1. **Streamlit Cloud → Settings → Secrets**，添加：\n"
+        "   ```toml\n"
+        "   DASHSCOPE_API_KEY = \"sk-你的密钥\"\n"
+        "   ```\n"
+        "2. **Settings → Advanced → Environment variables**，名称 `DASHSCOPE_API_KEY`\n"
+        "3. **本地开发**：在项目根目录创建 `.env`，内容为 `DASHSCOPE_API_KEY=sk-...`\n\n"
+        "并确认 `requirements.txt` 中已包含 `dashscope`。"
     )
 
 if "agent" not in st.session_state:

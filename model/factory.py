@@ -4,6 +4,7 @@ from langchain_core.embeddings import Embeddings
 from langchain_community.chat_models.tongyi import BaseChatModel, ChatTongyi
 from langchain_community.embeddings import DashScopeEmbeddings
 from common.config_handler import rag_conf
+from common.env_bootstrap import get_dashscope_api_key, ensure_dashscope_api_key_in_env
 import os
 from typing import Any
 
@@ -24,10 +25,13 @@ def get_chat_model() -> Optional[BaseChatModel]:
         return _CHAT_MODEL
 
     try:
-        # ChatTongyi requires the `dashscope` package and an API key in env
-        # The constructor may validate the API key; we catch exceptions to
-        # avoid import-time crashes in environments without the provider.
-        _CHAT_MODEL = ChatTongyi(model=rag_conf["chat_model_name"], api_key=os.getenv("DASHSCOPE_API_KEY"))
+        ensure_dashscope_api_key_in_env()
+        api_key = get_dashscope_api_key()
+        if not api_key:
+            raise ValueError("DASHSCOPE_API_KEY is not set")
+
+        # ChatTongyi requires the `dashscope` package and an API key
+        _CHAT_MODEL = ChatTongyi(model=rag_conf["chat_model_name"], api_key=api_key)
         return _CHAT_MODEL
     except Exception as e:
         # Log detailed info for deployment diagnostics but do not crash import.
@@ -47,9 +51,14 @@ def get_embed_model() -> Optional[Embeddings]:
         return _EMBED_MODEL
 
     try:
+        ensure_dashscope_api_key_in_env()
+        api_key = get_dashscope_api_key()
+        if not api_key:
+            raise ValueError("DASHSCOPE_API_KEY is not set")
+
         _EMBED_MODEL = DashScopeEmbeddings(
             model=rag_conf.get("embedding_model_name"),
-            dashscope_api_key=os.getenv("DASHSCOPE_API_KEY"),
+            dashscope_api_key=api_key,
         )
         return _EMBED_MODEL
     except Exception as e:
