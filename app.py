@@ -2,7 +2,6 @@
 # 解决线上 chromadb / protobuf 错误
 import os
 import streamlit as st
-
 # 隐藏所有 Streamlit 自带的 UI 元素
 st.set_page_config(
     page_title="智扫通机器人智能客服",
@@ -19,21 +18,22 @@ st.set_page_config(
 # 自定义 CSS 隐藏右上角按钮和右下角管理按钮
 hide_streamlit_style = """
 <style>
-/* 隐藏右上角所有按钮 */
+/* 隐藏右上角工具栏所有按钮 */
 #MainMenu {visibility: hidden;}
 .stDeployButton {display:none;}
-.stGitHubButton {display:none;}
-.stStarButton {display:none;}
-.stShareButton {display:none;}
-.stToolbar {display:none;}
+header[data-testid="stHeader"] {display: none;}
+[data-testid="stToolbar"] {display: none;}
+[data-testid="stDecoration"] {display: none;}
 
 /* 隐藏右下角 Manage app 按钮 */
-.stManageAppButton {display:none;}
+[data-testid="manage-app-button"] {display: none;}
+.stAppDeployButton {display: none;}
 
-/* 隐藏底部的 "Made with Streamlit" 水印 */
+/* 隐藏底部水印 */
 footer {visibility: hidden;}
 </style>
 """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 os.environ["CHROMA_TELEMETRY"] = "0"
 os.environ["OTEL_SDK_DISABLED"] = "1"
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
@@ -47,8 +47,8 @@ ensure_dashscope_api_key_in_env()
 from agent.react_agent import ReactAgent
 from model.factory import get_chat_model
 # 标题
-st.title("智扫通机器人智能客服")
-st.divider()
+# st.title("智扫通机器人智能客服")
+# st.divider()
 
 # 在页面启动时检测模型是否可用；如果不可用则提示用户设置 DASHSCOPE_API_KEY 或安装 dashscope
 _chat_available = get_chat_model() is not None
