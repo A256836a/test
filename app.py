@@ -1,6 +1,8 @@
 # import sys
 # 解决线上 chromadb / protobuf 错误
 import os
+import streamlit as st
+
 # 隐藏所有 Streamlit 自带的 UI 元素
 st.set_page_config(
     page_title="智扫通机器人智能客服",
@@ -37,7 +39,6 @@ os.environ["OTEL_SDK_DISABLED"] = "1"
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import time
 
-import streamlit as st
 from common.env_bootstrap import ensure_dashscope_api_key_in_env
 
 ensure_dashscope_api_key_in_env()
