@@ -1,9 +1,9 @@
-import sys
+# import sys
 import os
 import time
 
 # Ensure the app directory is on sys.path so sibling packages (agent, model, utils) import correctly
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import streamlit as st
 from agent.react_agent import ReactAgent
