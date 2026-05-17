@@ -1,6 +1,37 @@
 # import sys
 # 解决线上 chromadb / protobuf 错误
 import os
+# 隐藏所有 Streamlit 自带的 UI 元素
+st.set_page_config(
+    page_title="智扫通机器人智能客服",
+    page_icon="🤖",
+    layout="centered",
+    initial_sidebar_state="collapsed",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
+)
+
+# 自定义 CSS 隐藏右上角按钮和右下角管理按钮
+hide_streamlit_style = """
+<style>
+/* 隐藏右上角所有按钮 */
+#MainMenu {visibility: hidden;}
+.stDeployButton {display:none;}
+.stGitHubButton {display:none;}
+.stStarButton {display:none;}
+.stShareButton {display:none;}
+.stToolbar {display:none;}
+
+/* 隐藏右下角 Manage app 按钮 */
+.stManageAppButton {display:none;}
+
+/* 隐藏底部的 "Made with Streamlit" 水印 */
+footer {visibility: hidden;}
+</style>
+"""
 os.environ["CHROMA_TELEMETRY"] = "0"
 os.environ["OTEL_SDK_DISABLED"] = "1"
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
