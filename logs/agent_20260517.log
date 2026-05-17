@@ -25,3 +25,16 @@
 2026-05-17 09:34:28,339 - agent - INFO - middleware.py:24 - [tool monitor]工具rag_summarize调用成功
 2026-05-17 09:34:28,342 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有11条消息。
 2026-05-17 09:34:28,342 - agent - DEBUG - middleware.py:42 - [log_before_model]ToolMessage | 边刷建议每3-6个月更换一次，具体视使用频率和磨损情况而定；电池保养应避免长时间满电或完全放电存放，建议定期使用并保持电量在20%-80%之间，以延长电池寿命。
+2026-05-17 09:44:14,567 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有1条消息。
+2026-05-17 09:44:14,568 - agent - DEBUG - middleware.py:42 - [log_before_model]HumanMessage | 扫地机器人在我的城市如何保养
+2026-05-17 09:44:22,048 - agent - INFO - middleware.py:19 - [tool monitor]执行工具：get_user_location
+2026-05-17 09:44:22,049 - agent - INFO - middleware.py:20 - [tool monitor]传入参数：{}
+2026-05-17 09:44:22,312 - agent - WARNING - agent_tools.py:129 - [get_user_location]高德返回失败 info=INVALID_USER_KEY infocode=10001 ip=129.227.85.120
+2026-05-17 09:44:22,313 - agent - INFO - middleware.py:24 - [tool monitor]工具get_user_location调用成功
+2026-05-17 09:44:22,372 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有3条消息。
+2026-05-17 09:44:22,372 - agent - DEBUG - middleware.py:42 - [log_before_model]ToolMessage | 未知城市
+2026-05-17 09:44:25,881 - agent - INFO - middleware.py:19 - [tool monitor]执行工具：rag_summarize
+2026-05-17 09:44:25,882 - agent - INFO - middleware.py:20 - [tool monitor]传入参数：{'query': '扫地机器人通用保养方法'}
+2026-05-17 09:44:29,155 - agent - INFO - middleware.py:24 - [tool monitor]工具rag_summarize调用成功
+2026-05-17 09:44:29,945 - agent - INFO - middleware.py:40 - [log_before_model]即将调用模型，带有5条消息。
+2026-05-17 09:44:29,945 - agent - DEBUG - middleware.py:42 - [log_before_model]ToolMessage | 定期清理滚刷和边刷上的缠绕物，清空尘盒，擦拭传感器和充电触点，检查并清理滤网，避免在潮湿或有水区域使用，长时间不用时应关闭电源并存放于干燥处。
