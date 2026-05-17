@@ -1,4 +1,4 @@
-from langgraph.prebuilt import create_agent
+from langchain.agents import create_agent
 from model.factory import get_chat_model
 from common.prompt_loader import load_system_prompts
 from agent.tools.agent_tools import (rag_summarize, get_weather, get_user_location, get_user_id,
