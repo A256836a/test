@@ -1,6 +1,5 @@
-# 核心框架
-streamlit==1.21.0
-pillow==9.5.0
+# 核心框架（勿锁定旧版 streamlit/pillow，否则在 Python 3.12+ 上会从源码编译失败）
+streamlit>=1.41.0
 langchain==0.2.16
 langchain-community==0.2.16
 langchain-core==0.2.38
@@ -19,5 +18,5 @@ pydantic-settings>=2.6.1
 python-dotenv==1.0.1
 PyYAML==6.0.1
 
-# 解决protobuf冲突
-protobuf==3.20.3
+# 解决 chromadb / streamlit 的 protobuf 冲突
+protobuf>=3.20.3,<5

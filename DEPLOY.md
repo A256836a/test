@@ -7,12 +7,9 @@
    - 名称：DASHSCOPE_API_KEY
    - 值：你的 dashscope API Key
 
-2. 固定 Python 版本（仓库已添加/修改 `runtime.txt` 为 `python-3.10.12`），避免 Pillow 等包因缺失系统依赖而从源码编译失败。
+2. 固定 Python 版本：仓库根目录已配置 `runtime.txt`（`python-3.12.8`）与 `.python-version`（`3.12`）。**若应用是在 Streamlit Cloud 上早期创建的，可能仍运行在 Python 3.14**——请在部署时于 Advanced 中选择 Python 3.12，或删除应用后重新部署以应用版本设置。
 
-3. 确保 `requirements.txt` 包含以下（仓库当前已包含）：
-   - dashscope==1.20.1
-   - streamlit==1.35.0
-   - chromadb / langchain 及其它所需库
+3. 确保 `requirements.txt` 使用较新的 Streamlit（`>=1.41.0`），**不要**再锁定 `streamlit==1.21.0` 或 `pillow==9.5.0`（会在新 Python 上触发源码编译失败）。
 
 4. 如果你不想使用外部模型或不想处理 API Key，可选择删除 `dashscope` 行并保留仓库中已实现的降级/模拟逻辑，应用会以降级模式启动。
 
