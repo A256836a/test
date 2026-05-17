@@ -11,15 +11,25 @@ class ReactAgent:
     def __init__(self):
         chat_model = get_chat_model()
         if chat_model is None:
-            raise RuntimeError("chat model is not available; ensure DASHSCOPE_API_KEY or required deps are set")
+            # Fallback: create a minimal mock agent with a compatible stream() method
+            class _MockAgent:
+                def __init__(self):
+                    pass
 
-        self.agent = create_agent(
-            model=chat_model,
-            system_prompt=load_system_prompts(),
-            tools=[rag_summarize, get_weather, get_user_location, get_user_id,
-                   get_current_month, fetch_external_data, fill_context_for_report],
-            middleware=[monitor_tool, log_before_model, report_prompt_switch],
-        )
+                def stream(self, input_dict, stream_mode=None, context=None):
+                    # yield a friendly message and return
+                    user = input_dict.get("messages", [{}])[-1].get("content", "")
+                    yield {"messages": [type("M", (), {"content": f"[演示模式] 无法使用外部模型，已降级回答：收到你的问题 — {user}"})()]}
+
+            self.agent = _MockAgent()
+        else:
+            self.agent = create_agent(
+                model=chat_model,
+                system_prompt=load_system_prompts(),
+                tools=[rag_summarize, get_weather, get_user_location, get_user_id,
+                       get_current_month, fetch_external_data, fill_context_for_report],
+                middleware=[monitor_tool, log_before_model, report_prompt_switch],
+            )
 
     def execute_stream(self, query: str):
         input_dict = {

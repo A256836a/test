@@ -13,9 +13,20 @@ import time
 # 然后用相对导入
 from agent.react_agent import ReactAgent
 import streamlit as st
+from model.factory import get_chat_model
 # 标题
 st.title("智扫通机器人智能客服")
 st.divider()
+
+# 在页面启动时检测模型是否可用；如果不可用则提示用户设置 DASHSCOPE_API_KEY 或安装 dashscope
+_chat_available = get_chat_model() is not None
+if not _chat_available:
+    st.warning(
+        "当前处于降级模式：未检测到 dashscope 包或环境变量 DASHSCOPE_API_KEY 未设置。\n"
+        "若要启用真实模型响应，请在部署环境（例如 Streamlit Cloud 的 Settings -> Advanced -> Environment variables）中添加 `DASHSCOPE_API_KEY`，"
+        "并确保 `requirements.txt` 中包含 `dashscope`。\n"
+        "当前将使用本地降级/模拟响应以保持应用可用。"
+    )
 
 if "agent" not in st.session_state:
     st.session_state["agent"] = ReactAgent()

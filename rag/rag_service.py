@@ -25,7 +25,13 @@ class RagSummarizeService(object):
         self.prompt_template = PromptTemplate.from_template(self.prompt_text)
         self.model = get_chat_model()
         if self.model is None:
-            raise RuntimeError("chat model initialization failed; check environment and dependencies")
+            # fallback: simple mock that echoes input
+            class _MockModel:
+                def invoke(self, data):
+                    inp = data.get("input") if isinstance(data, dict) else str(data)
+                    return f"[演示模式] 模型不可用，无法提供真实总结；你的问题：{inp}"
+
+            self.model = _MockModel()
         self.chain = self._init_chain()
 
     def _init_chain(self):
