@@ -1,7 +1,9 @@
 # import sys
 import os
 import time
-
+os.environ["CHROMA_TELEMETRY"] = "0"
+os.environ["OTEL_SDK_DISABLED"] = "1"
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 # Ensure the app directory is on sys.path so sibling packages (agent, model, utils) import correctly
 # sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
