@@ -1,16 +1,14 @@
 # import sys
 import os
 import time
-os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
-os.environ["CHROMA_TELEMETRY"] = "0"
-os.environ["OTEL_SDK_DISABLED"] = "1"
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-# Ensure the app directory is on sys.path so sibling packages (agent, model, utils) import correctly
-# sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import streamlit as st
+# # 关键：添加项目根目录（AI大模型）到Python路径
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# # ======================================
+
+# 然后用相对导入
 from agent.react_agent import ReactAgent
-
+import streamlit as st
 # 标题
 st.title("智扫通机器人智能客服")
 st.divider()
