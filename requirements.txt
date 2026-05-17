@@ -1,16 +1,19 @@
 # 核心框架（勿锁定旧版 streamlit/pillow，否则在 Python 3.12+ 上会从源码编译失败）
 streamlit>=1.41.0
-langchain==0.2.16
-langchain-community==0.2.16
-langchain-core==0.2.38
-langgraph==0.2.19
+
+# LangChain 1.x（react_agent / middleware 使用 create_agent API，需 1.0+）
+langchain>=1.2.0,<2
+langchain-core>=1.2.0,<2
+langchain-community>=0.4.0,<1
+langchain-classic>=1.0.0,<2
+langgraph>=1.1.0,<2
 
 # 向量数据库
-langchain-chroma==0.1.4
-chromadb==0.5.3
+langchain-chroma>=1.0.0,<2
+chromadb>=0.5.3,<2
 
 # 通义千问
-dashscope==1.20.1
+dashscope>=1.20.1
 
 # 工具库
 pydantic>=2.11.0
