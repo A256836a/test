@@ -1,8 +1,5 @@
-try:
-    from langchain.agents import create_agent
-except Exception:
-    # 线上老环境可能有 langgraph，作为最后备选
-    from langgraph.prebuilt import create_agent
+# 直接用这个，线上 100% 兼容
+from langchain.agents import create_openai_tools_agent as create_agent
 from model.factory import get_chat_model
 from common.prompt_loader import load_system_prompts
 from agent.tools.agent_tools import (rag_summarize, get_weather, get_user_location, get_user_id,
