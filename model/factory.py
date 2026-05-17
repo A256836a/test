@@ -25,7 +25,7 @@ def get_chat_model() -> Optional[BaseChatModel]:
 
     try:
         api_key = os.getenv("DASHSCOPE_API_KEY")
-        _CHAT_MODEL = ChatTongyi(model=rag_conf.get("chat_model_name"), api_key=api_key)
+        _CHAT_MODEL = ChatTongyi(model=rag_conf.get("chat_model_name"), api_key=api_key,dashscope_api_key=api_key)
         return _CHAT_MODEL
     except Exception as e:
         # Fail gracefully: log to stderr to make deployment logs clearer.
