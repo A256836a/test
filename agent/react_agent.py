@@ -1,5 +1,11 @@
 # 直接用这个，线上 100% 兼容
-from langchain.agents import create_openai_tools_agent as create_agent
+try:
+    # 线上环境用这个
+    from langchain.agents import create_openai_tools_agent as create_agent
+except:
+    # 本地环境用这个
+    from langchain.agents import create_agent
+
 from model.factory import get_chat_model
 from common.prompt_loader import load_system_prompts
 from agent.tools.agent_tools import (rag_summarize, get_weather, get_user_location, get_user_id,
