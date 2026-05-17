@@ -1,7 +1,7 @@
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from common.config_handler import chroma_conf
-from model.factory import embed_model
+from model.factory import get_embed_model
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from common.path_tool import get_abs_path
 from common.file_handler import pdf_loader, txt_loader, listdir_with_allowed_type, get_file_md5_hex
@@ -11,6 +11,10 @@ import os
 
 class VectorStoreService:
     def __init__(self):
+        embed_model = get_embed_model()
+        if embed_model is None:
+            raise RuntimeError("embedding model is not available; check environment and dependencies")
+
         self.vector_store = Chroma(
             collection_name=chroma_conf["collection_name"],
             embedding_function=embed_model,
