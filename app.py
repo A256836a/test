@@ -1,9 +1,10 @@
 # import sys
 import os
 import time
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 os.environ["CHROMA_TELEMETRY"] = "0"
 os.environ["OTEL_SDK_DISABLED"] = "1"
-os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 # Ensure the app directory is on sys.path so sibling packages (agent, model, utils) import correctly
 # sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,7 +19,7 @@ if "agent" not in st.session_state:
     st.session_state["agent"] = ReactAgent()
 
 if "message" not in st.session_state:
-    st.session_state["message"] = []
+    st.session_state["message"] = [{'role':'assistant','content':'请输入您想咨询关于扫地机器人内容'}]
 
 for message in st.session_state["message"]:
     st.chat_message(message["role"]).write(message["content"])
